@@ -20,10 +20,13 @@ destroyBtnEl.addEventListener('click', () => {
   destroyBoxes();
 })
 function createBoxes(amount) {
+  if (amount<=0) {
+      alert('Значення поля не може бути нулем')
+     return
+  }
   const arrElements = [];
-
   let sizeCounter = 30;
-  for (let i = 0; i <= amount; i += 1){
+  for (let i = 1; i <= amount; i += 1){
    const newEl= document.createElement('div')
     newEl.style.width = sizeCounter+'px';
     newEl.style.height = sizeCounter+'px';
@@ -33,7 +36,6 @@ function createBoxes(amount) {
   }
   mainBox.append(...arrElements)
 
-  console.log(arrElements)
 }
 function destroyBoxes() {
   mainBox.innerHTML = '';

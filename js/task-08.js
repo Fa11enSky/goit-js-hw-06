@@ -13,8 +13,7 @@ formEl.addEventListener('submit', (event) => {
         email,
         password,   
     }
+    
     console.log(formObj);
-    form.elements.email.value = '';
-    form.elements.password.value = '';
-
+    form.reset()
 })
